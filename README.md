@@ -68,7 +68,7 @@ kernel_size
 ```
 - 在单尺寸卷积核的情况下，kernel_size=9可以达到最好的效果
 - 在多尺寸卷积核的情况下，kernel_size=[5,7,9]可以达到最好的效果
-```
+
 
 ## part 5. 参考代码
 [Text Classification with CNN and RNN](https://github.com/gaussic/text-classification-cnn-rnn)
