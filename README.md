@@ -53,6 +53,22 @@ $ python run_cnn.py train
 ```
 $ python run_cnn.py test
 ```
+## part 4. 超参调节
+```
+embedding_dim
+```
+- 16维：利用训练数据直接自己拟合embedding层，在同一批训练验证集下可以达到较高的召回以及准确率，但是明显存在过拟合的现象。线上测试召回率极高，但是大批量的正常样本被误判为负样本。
+- 100维：基于4000w的弹幕语料训练的embedding字向量，模型训练阶段并不能达到最好的召回率以及准确率。线上测试过程中召回率比直接拟合稍低，但是正常样本的误判率也很低。模型泛化能力较强。
+```
+seq_length
+```
+- 弹幕文本属于短文本序列，此处的长度不宜过长，50的长度对于此模型来说是比较好的超参。
+```
+kernel_size
+```
+- 在单尺寸卷积核的情况下，kernel_size=9可以达到最好的效果
+- 在多尺寸卷积核的情况下，kernel_size=[5,7,9]可以达到最好的效果
+```
 
-## part 4. 参考代码
+## part 5. 参考代码
 [Text Classification with CNN and RNN](https://github.com/gaussic/text-classification-cnn-rnn)
